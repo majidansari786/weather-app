@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+        /* Reset default margins and set dark theme */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .manhwa-list {
+            max-width: 800px;
+            width: 90%;
+            margin: 20px;
+            padding: 20px;
+            background: rgba(34, 40, 66, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .manhwa-list:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+        }
+
+        .group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .input {
+            width: 100%;
+            max-width: 300px;
+            height: 45px;
+            padding-left: 2.5rem;
+            border-radius: 12px;
+            background-color: #16171d;
+            color: #bdbecb;
+            border: none;
+            outline: none;
+            box-shadow: 0 0 0 1.5px #2b2c37;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            fill: #bdbecb;
+            width: 1rem;
+            height: 1rem;
+            pointer-events: none;
+        }
+
+        .search-btn {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #00d4ff;
+            color: #16213e;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: #00aacc;
+        }
+    </style>
+</head>
+<body>
+    <div class="manhwa-list">
+        <h1>Weather Dashboard</h1>
+        <div class="group">
+            <h4><span>Error: {{error}}!!! <br>Enter Correct City name. </span></h4>
+        </div>
+    </div>
+    <script>
+        function searchWeather() {
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                window.location.href = `/weather/${searchTerm}`;
+            }
+        }
+    </script>
+</body>
+</html>

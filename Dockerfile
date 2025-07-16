@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirement.txt .
 
-RUN pip -r requirement.txt
+RUN pip install -r requirement.txt
 
 COPY . .
 

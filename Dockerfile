@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY requirement.txt .
 
+RUN pip -r requirement.txt
+
 COPY . .
 
 EXPOSE 5000
